@@ -23,3 +23,6 @@ class Browser(object):
     def switch_to_window(context, window_index):
         context.driver.switch_to.window(
             context.driver.window_handles[window_index])
+
+    def js_scroll_into_view(context, target):
+        context.driver.execute_script('arguments[0].scrollIntoView(true);', target)
