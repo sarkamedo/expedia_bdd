@@ -26,6 +26,7 @@ class MainPage(Browser):
         sb = self.get_search_box()
         sb.clear()
         sb.send_keys(search_query)
+        time.sleep(2)
         sb.send_keys(Keys.RETURN)
         time.sleep(1)
         sb.send_keys(Keys.RETURN)
