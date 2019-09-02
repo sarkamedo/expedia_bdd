@@ -1,5 +1,6 @@
 from selenium import webdriver
-import datetime, time
+import datetime
+import time
 
 
 class Browser():
@@ -30,6 +31,8 @@ class Browser():
             'arguments[0].scrollIntoView(true);', target)
 
     def take_screenshot(context, filename):
-        timpestamp = datetime.datetime\
+        time_stamp = datetime.datetime\
             .fromtimestamp(time.time()).strftime('%Y%m%d_%H%M%S')
-        context.driver.save_screenshot(f"features/screenshots/{filename}_{timpestamp}.png")
+        file_path = f"features/screenshots/{filename}-{time_stamp}.png"
+        context.driver.save_screenshot(file_path)
+        return print(f"Screenshot was saved as {file_path}")
