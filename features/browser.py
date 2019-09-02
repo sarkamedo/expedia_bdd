@@ -2,7 +2,7 @@ from selenium import webdriver
 import datetime, time
 
 
-class Browser(object):
+class Browser():
 
     driver = webdriver.Chrome()
 
