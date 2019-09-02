@@ -1,4 +1,5 @@
 from selenium import webdriver
+import datetime, time
 
 
 class Browser(object):
@@ -25,4 +26,10 @@ class Browser(object):
             context.driver.window_handles[window_index])
 
     def js_scroll_into_view(context, target):
-        context.driver.execute_script('arguments[0].scrollIntoView(true);', target)
+        context.driver.execute_script(
+            'arguments[0].scrollIntoView(true);', target)
+
+    def take_screenshot(context, filename):
+        timpestamp = datetime.datetime\
+            .fromtimestamp(time.time()).strftime('%Y%m%d_%H%M%S')
+        context.driver.save_screenshot(f"features/screenshots/{filename}_{timpestamp}.png")
