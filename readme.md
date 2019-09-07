@@ -21,3 +21,13 @@ pip install behave
 pip install pyhamcrest
 ```
 * You could also install any extension within your IDE that highlights .feature files for better readability. Like VSCode Cucumber (Gherkin) Full Language Support
+
+### Run the tests
+
+To run the tests:
+* Navigate to project folder
+* Type behave in terminal
+```bash
+behave
+```
+* You can find more information for your run options at https://behave.readthedocs.io/en/latest/
