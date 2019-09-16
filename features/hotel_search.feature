@@ -11,5 +11,5 @@ Feature: As a user I want to search for hotels so that I can book a room on expe
         Examples:
             | desired_location | hotels_quantity |
             | honolulu         | 19              |
-            | miami            | 19              |
+            | miami            | 20              |
 

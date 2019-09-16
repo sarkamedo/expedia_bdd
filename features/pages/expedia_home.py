@@ -9,15 +9,15 @@ from features.browser import Browser
 class MainPage(Browser):
 
     # Locators
-    _hotels_button = "#tab-hotel-tab-hp"
-    _search_box = "#hotel-destination-hp-hotel"
+    _hotels_button = (By.CSS_SELECTOR, "#tab-hotel-tab-hp")
+    _search_box = (By.CSS_SELECTOR, "#hotel-destination-hp-hotel")
 
     def get_hotels_button(self):
-        return WDW(self.driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, self._hotels_button)))
+        return WDW(self.driver, 10).until(EC.element_to_be_clickable((self._hotels_button)))
 
     def get_search_box(self):
         return WDW(self.driver, 10).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, self._search_box)))
+            EC.presence_of_element_located((self._search_box)))
 
     def click_hotels_button(self):
         self.get_hotels_button().click()
